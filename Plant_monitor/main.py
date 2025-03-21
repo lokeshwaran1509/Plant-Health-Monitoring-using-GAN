@@ -7,8 +7,8 @@ from ST7735 import TFT
 import sysfont
 
 # Wi-Fi Credentials
-WIFI_SSID = "Lokeshwaran"
-WIFI_PASSWORD = "30210815"
+WIFI_SSID = "Enter SSID"
+WIFI_PASSWORD = "Enter password"
 
 # LCD pin
 tft_CS = 15
