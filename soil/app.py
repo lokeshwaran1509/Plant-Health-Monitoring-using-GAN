@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Initialize Firebase Admin SDK with credentials
 cred = credentials.Certificate("pass.json")  # Path to your Firebase credentials JSON file
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://soil-monitor-44270-default-rtdb.asia-southeast1.firebasedatabase.app/'
+    'databaseURL': 'Your URL goes here'
 })
 
 # Route to display data from Firebase
