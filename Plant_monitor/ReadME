@@ -4,3 +4,5 @@
 2. the main.py file sends data to the firebase account provided token values
 3. the app.py utilize flask to create a web application
 4. the html file is used to display realtime database fetched from firebase
+5. Use this repo : https://github.com/boochow/MicroPython-ST7735 for LCD display programming
+6. for text search github sysfont 
