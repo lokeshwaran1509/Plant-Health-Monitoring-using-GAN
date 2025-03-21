@@ -1,25 +1,32 @@
 import network
-import urequests
+import urequests as requests
 import time
-import dht
-from machine import Pin, ADC
+import random
+from machine import Pin, SPI
+from ST7735 import TFT
+import sysfont
 
 # Wi-Fi Credentials
-WIFI_SSID = "your SSID"
-WIFI_PASSWORD = "your password"
+WIFI_SSID = "Lokeshwaran"
+WIFI_PASSWORD = "30210815"
+
+# LCD pin
+tft_CS = 15
+tft_RESET = 4
+tft_A0 = 26
+tft_SDA = 13
+tft_SCK = 14
 
 # Firebase Config
-FIREBASE_URL = "Enter firebase url"      
-FIREBASE_AUTH = "Enter Firebase Auth tocken"
+FIREBASE_URL = "enter URL"
+FIREBASE_AUTH = "Enter AUth token"
 
-# Sensor Pins
-DHT_PIN = 4  # Change based on your setup
-MOISTURE_PIN = 35  # Analog pin for moisture sensor
-
-# Initialize Sensors
-dht_sensor = dht.DHT11(Pin(DHT_PIN))
-moisture_sensor = ADC(Pin(MOISTURE_PIN))
-moisture_sensor.atten(ADC.ATTN_11DB)  # Full range (0-3.3V)
+# Initialize SPI and TFT display
+spi = SPI(1, baudrate=20000000, polarity=0, phase=0, miso=None)
+tft = TFT(spi, tft_A0, tft_RESET, tft_CS)
+tft.initr()
+tft.rgb(True)
+tft.fill(TFT.BLACK)
 
 # Connect to Wi-Fi
 def connect_wifi():
@@ -42,7 +49,7 @@ def send_to_firebase(temp, hum, moisture):
     }
     headers = {"Content-Type": "application/json"}
     try:
-        response = urequests.put(url, json=data, headers=headers)
+        response = requests.put(url, json=data, headers=headers)
         print("Firebase Response:", response.text)
         response.close()
     except Exception as e:
@@ -52,16 +59,21 @@ def send_to_firebase(temp, hum, moisture):
 connect_wifi()
 while True:
     try:
-        dht_sensor.measure()
-        temp = dht_sensor.temperature()
-        hum = dht_sensor.humidity()
-        moisture = moisture_sensor.read()  # 0-4095 (ESP32 ADC range)
-        
+        # Generate random values instead of sensor readings
+        temp = round(random.uniform(20.0, 40.0), 2)  # Random temp between 20°C - 40°C
+        hum = round(random.uniform(30.0, 90.0), 2)   # Random humidity between 30% - 90%
+        moisture = random.randint(0, 4095)           # Random moisture (0-4095, ESP32 ADC range)
+
         print(f"Temp: {temp}°C, Humidity: {hum}%, Moisture: {moisture}")
         send_to_firebase(temp, hum, moisture)
-        
-    except Exception as e:
-        print("Error reading sensors:", e)
-    
-    time.sleep(5)  # Send data every 10 seconds
 
+        # Display data on LCD
+        tft.fill(TFT.BLACK)  # Clear screen
+        tft.text((10, 20), f"Temp: {temp}C", tft.WHITE, sysfont.sysfont)
+        tft.text((10, 40), f"Humidity: {hum}%", tft.WHITE, sysfont.sysfont)
+        tft.text((10, 60), f"Moisture: {moisture}%", tft.WHITE, sysfont.sysfont)
+
+    except Exception as e:
+        print("Error:", e)
+
+    time.sleep(10)  # Send data every 10 seconds
