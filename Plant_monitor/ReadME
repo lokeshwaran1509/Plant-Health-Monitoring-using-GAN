@@ -1,1 +1,6 @@
+****************** this folder intends to upload sensor data and create a web app to display the data ****************************8
 
+1. the main.py file uses micropython for running on ESP32 module
+2. the main.py file sends data to the firebase account provided token values
+3. the app.py utilize flask to create a web application
+4. the html file is used to display realtime database fetched from firebase
