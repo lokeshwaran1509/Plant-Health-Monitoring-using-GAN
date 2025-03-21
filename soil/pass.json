@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "soil-monitor-44270",
+  "private_key_id": "a2c06f2d7851d200edde5e0726bc71e1f8394074",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCijlHk+s96EVYN\nrjBYk04gWuG3akC27QLeCZNXHY9uANOgpO5EBonUiBxV3M/SUx9shbWMqpDUZ3NG\nOBYVNb2NvxRbSS7nvKyl/zj5jKlEBC0eTdn+/4DadeY+806b14qs7cb8VRRryzhb\n/lg+cIB0mTCqpjHTpZDb2l6lmQt9eoh0l58f7Hw2SrQe69SwDHcl32iulofOd/Zn\nfzfCXB0B3svcM09Sw4SzD95DtEffj+HVI6pFVAn5T9ahcwTuIlkQC6ky0eVeUkfF\niEdJ3W5J2yvHOE8V1eLLl6aREFmdp/AwytJTxmK82q9feb5tXE9FfpliZf58j6CJ\nnexhI2BTAgMBAAECggEAJ85jJof2o6U4Jex4YVBdKtYmfOQzibf7YkUFBCm0dFMW\nf7mzsQvK17Um/y2t5Iq/YLNTdGlWQvU8SL82RSZeTyYyBXKj3lKZEqMvoAh+cK33\nIHse/W8y7gw+AD9Tih0bk+I8PpFVCVp/6CMeF9gz1JmozbkZ7YKXOQc98x5JroWd\nhLqxVCLvXIrs64QMzLhUufY3dgKjHNqtiPlCPuseBJJLqCe7i7QUIQBrbwyShNla\nJcWoabDkZr0Hc2lyp4DiZFyPOS3E7gytPW6HSSUtZAJX3xTBQFW6oB0yYTuCpevw\ncVct0gwLy+w7DZ58crCA1j90v5tDWxndNR044L4SqQKBgQDUQ6938JdHMxEHvPcf\nWTcrWSG9nuMpMTxNCbBYT0MdJFIb31J4nWAscHpK2r1lmdh2WJptUfF72O1QewrN\nVt0ZW6fAl45fiPNBQDkccNoYkeomWlt7O/I++opMF7ctkG63G9cbuYmd4f70qDLo\nJpnx8LFz5dfcMNtxoVe3SqMdyQKBgQDEDKlNesOTmSZ10CBc7EIWUTRLOmroQtai\nM6SpSnqd2PdohnR744zWcb6av47MXS70Hkn0eAaqDDsm/9h5zpUMcrXLh+P+n0sc\n+pr7aae5VWV+ebvLWv6C1s45kSBCLXv9ojGkmv0+eIQXZbs0BXxiYD3y1MJ4z8er\n1T678ZTrOwKBgFtDpuQ467JPQJlFJDO0VkYrEpjHAgCqDLVK3yl5GvAit7MIOBtn\n/vvceJhKqHhQx4NK4UrzmpKXWKHr5V8YZAQNJnlmMG7fIUgC5wtVclByHGzVGNRJ\nmASAEIpbAAV1PkU4kSp4gbUCgG6NCyZJwpMF3CZqwn8H+rJGnsJOMwgRAoGBALhA\nUgmAXDjmka/d19ydKotA7E3bbEg3MPMmaBW26sBY/kTdQLKCrIWKRyG28KT+2rcR\nlF3PRCwi7KD9iN0Jmykk0dikMVHHMdfdazToGnrjWEziae136oTbDtwpmdC4YLSB\n7/gMtf81UqeOs77zfPAUFYSYEuFqHfVPp/MI2/WrAoGBAIlwB5bdr3MdKjYJuPe3\n/39jeYx3JOosZVHvuNWPBtxHp3fr3kF1M1s+IlzzLYejcf+DB5Q8YgRBSeidvkmE\nT5aafQ0PGwV/LeVVuzj4MF6rCxJAenlBPO2D9gpAYFQq2DGSP3O2m0XX2SJK3LIo\n6dph+CshGBbGZWXi84+BHlMK\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@soil-monitor-44270.iam.gserviceaccount.com",
+  "client_id": "102084647227986191752",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40soil-monitor-44270.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
