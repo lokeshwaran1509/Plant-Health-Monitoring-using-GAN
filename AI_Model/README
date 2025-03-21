@@ -1,0 +1,4 @@
+-> uses GAN for training the model.
+-> run main.py to create plant disease model
+-> run weed_detect.py for weed detection
+-> atlast run Detect.py to display output
