@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Sensor Dashboard</title>
+    
+    <!-- Google Charts for Gauge -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        // ✅ Replace with your Firebase Config
+        const firebaseConfig = {
+            
+                // Copy paste your firebase authentication data //
+                
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        google.charts.load('current', { packages: ['gauge'] });
+        google.charts.setOnLoadCallback(drawGauges); // Ensure it's only called once
+
+        let chart, data, options;
+
+        function drawGauges() {
+            data = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['Temperature', 0],
+                ['Humidity', 0],
+                ['Moisture', 0]
+            ]);
+
+            options = {
+                width: 400, height: 200,
+                redFrom: 80, redTo: 100,
+                yellowFrom: 50, yellowTo: 80,
+                minorTicks: 5,
+                max: 100
+            };
+
+            chart = new google.visualization.Gauge(document.getElementById('gauge_div'));
+            chart.draw(data, options);
+
+            getData();
+        }
+
+        function getData() {
+            const dataRef = ref(database, "sensor_data");
+
+            onValue(dataRef, (snapshot) => {
+                if (snapshot.exists()) {
+                    const sensorData = snapshot.val();
+                    data.setValue(0, 1, sensorData.temperature);
+                    data.setValue(1, 1, sensorData.humidity);
+                    data.setValue(2, 1, sensorData.moisture);
+                    chart.draw(data, options);
+                } else {
+                    console.log("No data found in Firebase!");
+                }
+            });
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1 { color: #333; }
+        #gauge_div {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Real-Time Sensor Dashboard</h1>
+    
+    <div id="gauge_div"></div>
+
+</body>
+</html>
