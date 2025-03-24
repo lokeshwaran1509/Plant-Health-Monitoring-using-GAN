@@ -1,4 +1,4 @@
-#Plant Health Monitoring Using GAN
+# Plant Health Monitoring Using GAN
 Overview
 This project aims to enhance plant health monitoring by leveraging Generative Adversarial Networks (GANs) for data augmentation, improving the accuracy of disease detection models. By generating synthetic images of diseased plants, the project addresses the challenge of limited labeled data in training robust deep learning models.​
 
